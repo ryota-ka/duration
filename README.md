@@ -1,28 +1,33 @@
 # ms
 
-Use this package to easily and safely convert various time formats to `DiffTime` at compile time.
+A tiny compile-time time utility library, inspired by [zeit/ms](https://github.com/zeit/ms).
 
 ## Examples
 
 ```haskell
 {-# LANGUAGE QuasiQuotes #-}
+{-# LANGUAGE TypeApplications #-}
 
 module Main where
 
-import Data.Time.Clock.Ms (ms)
+import Data.Time.Clock (DiffTime, NominalDiffTime)
+import Data.Time.Clock.Ms (t, s, ms, µs, ns, ps)
 
 main :: IO ()
 main = do
-    print [ms| 2 days |]  -- 172800s
-    print [ms| 1d |]      -- 86400s
-    print [ms| 10h |]     -- 36000s
-    print [ms| 2.5 hrs |] -- 9000s
-    print [ms| 2h |]      -- 7200s
-    print [ms| 1m |]      -- 60s
-    print [ms| 5s |]      -- 5s
-    print [ms| 1y |]      -- 31536000s
-    print [ms| 100 |]     -- 0.1s
-    print [ms| -3 days |] -- -259200s
-    print [ms| -1h |]     -- -3600s
-    print [ms| -200 |]    -- -0.2s
+    print @DiffTime [t| 1 day |] -- 86400s
+    print @DiffTime [t| 2h |]    -- 7200s
+    print @DiffTime [t| -1m |]   -- -60s
+
+    print @NominalDiffTime [s| 1 |]  -- 1s
+    print @NominalDiffTime [ms| 1 |] -- 0.001s
+    print @NominalDiffTime [µs| 1 |] -- 0.000001s
+    print @NominalDiffTime [ns| 1 |] -- 0.000000001s
+    print @NominalDiffTime [ps| 1 |] -- 0.000000000001s
+
+    print @Int      [s| 2 days |]  -- 172800
+    print @Integer  [ms| 5s |]     -- 5000
+    print @Double   [µs| 2min |]   -- 1.2e8
+    print @Float    [ns| -1 sec |] -- -1.0e9
+    print @Rational [ps| 10ms |]   -- 10000000000 % 1
 ```
