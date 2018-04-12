@@ -1,4 +1,4 @@
-# ms
+# duration
 
 A tiny compile-time time utility library, inspired by [zeit/ms](https://github.com/zeit/ms).
 
@@ -11,7 +11,7 @@ A tiny compile-time time utility library, inspired by [zeit/ms](https://github.c
 module Main where
 
 import Data.Time.Clock (DiffTime, NominalDiffTime)
-import Data.Time.Clock.Ms (t, s, ms, µs, ns, ps)
+import Data.Time.Clock.Duration (t, s, ms, µs, ns, ps)
 
 main :: IO ()
 main = do

@@ -6,10 +6,10 @@ License     : BSD-3
 Maintainer  : kameoka.ryota@gmail.com
 Stability   : experimental
 
-All quasiquoters defined in this module are re-exported from @Data.Time.Clock.Ms@.
+All quasiquoters defined in this module are re-exported from @Data.Time.Clock.Duration@.
 -}
 
-module Data.Time.Clock.Ms.QQ
+module Data.Time.Clock.Duration.QQ
     (
     -- * Quasiquoters
       t
@@ -25,7 +25,7 @@ import Data.Bool (bool)
 import Data.Char (isAlpha, toLower, toUpper)
 import Data.Fixed (E0, E3, E6, E9, E12)
 import Data.Proxy (Proxy (Proxy))
-import Data.Time.Clock.Ms.Types
+import Data.Time.Clock.Duration.Types
 import Language.Haskell.TH (Exp (AppE, ConE, SigE, VarE), Name, Q, Type (AppT, ConT))
 import Language.Haskell.TH.Quote (QuasiQuoter (QuasiQuoter, quoteExp))
 import Text.Parsec (char, choice, digit, eof, many1, option, optional, runParser, spaces, try)
@@ -55,7 +55,7 @@ import Text.Parsec.String (Parser)
 -- >>> [t| 1ms |] :: CUSeconds
 -- 1000
 --
--- You can use various expressions inside the quasiquoter. (See 'Data.Time.Clock.Ms.Types.Time' for details.)
+-- You can use various expressions inside the quasiquoter. (See 'Data.Time.Clock.Duration.Types.Time' for details.)
 --
 -- >>> [t| 1ms |] :: DiffTime
 -- 0.001s

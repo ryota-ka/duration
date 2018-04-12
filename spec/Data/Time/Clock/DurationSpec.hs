@@ -1,8 +1,8 @@
 {-# LANGUAGE QuasiQuotes #-}
 
-module Data.Time.Clock.MsSpec (spec) where
+module Data.Time.Clock.DurationSpec (spec) where
 
-import Data.Time.Clock.Ms (s, ms, µs, ns, ps, t)
+import Data.Time.Clock.Duration (s, ms, µs, ns, ps, t)
 
 import Test.Hspec (context, describe, it, shouldBe, Spec)
 

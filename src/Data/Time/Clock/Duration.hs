@@ -9,7 +9,7 @@ Stability   : experimental
 A tiny compile-time time utility library, inspired by <https://github.com/zeit/ms zeit/ms>.
 -}
 
-module Data.Time.Clock.Ms
+module Data.Time.Clock.Duration
     (
     -- * Quasiquoters
       t
@@ -20,4 +20,4 @@ module Data.Time.Clock.Ms
     , ps
     ) where
 
-import Data.Time.Clock.Ms.QQ
+import Data.Time.Clock.Duration.QQ

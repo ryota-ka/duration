@@ -1,6 +1,6 @@
-name:                ms
+name:                duration
 version:             0.1.0.0
-github:              "ryota-ka/ms"
+github:              "ryota-ka/duration"
 license:             BSD3
 author:              "Ryota Kameoka"
 maintainer:          "kameoka.ryota@gmail.com"
@@ -17,7 +17,7 @@ extra-source-files:
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on Github at <https://github.com/ryota-ka/ms#readme>
+description:         Please see the README on Github at <https://github.com/ryota-ka/duration#readme>
 
 dependencies:
 - base >= 4.7 && < 5
@@ -37,7 +37,7 @@ tests:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - ms
+    - duration
     - hspec
   doctest:
     main:                Doctest.hs
@@ -47,5 +47,5 @@ tests:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - ms
+    - duration
     - doctest

@@ -17,4 +17,4 @@ cabal.sandbox.config
 *.hp
 .stack-work/
 
-ms.cabal
+duration.cabal

@@ -12,7 +12,7 @@ This module exports internally used type classes and data types.
 You can extend this package's functionality by utilizing them.
 -}
 
-module Data.Time.Clock.Ms.Types
+module Data.Time.Clock.Duration.Types
     (
     -- * Type classes
       AbsoluteDuration (..)
@@ -31,7 +31,7 @@ import Language.Haskell.TH.Syntax (Lift)
 
 -- $setup
 -- >>> :set -XQuasiQuotes
--- >>> import Data.Time.Clock.Ms.QQ
+-- >>> import Data.Time.Clock.Duration.QQ
 
 -- | The 'AbsoluteDuration' class provides how to convert the given 'Time' into a specific unit of time.
 -- An instance should represent a quantity with
@@ -76,7 +76,7 @@ instance AbsoluteDuration CSUSeconds where
 -- 3 seconds in microseconds:
 --
 -- >>> [µs| 3s |] :: Int
--- 500000
+-- 3000000
 class RelativeDuration a where
     toRelativeDuration :: HasResolution r => Proxy r -> Time -> a
 
