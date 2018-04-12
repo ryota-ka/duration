@@ -29,9 +29,9 @@ library:
   source-dirs: src
 
 tests:
-  ms-test:
+  spec:
     main:                Spec.hs
-    source-dirs:         test
+    source-dirs:         spec
     ghc-options:
     - -threaded
     - -rtsopts
@@ -39,3 +39,13 @@ tests:
     dependencies:
     - ms
     - hspec
+  doctest:
+    main:                Doctest.hs
+    source-dirs:         doctest
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - ms
+    - doctest
